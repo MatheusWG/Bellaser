@@ -1,0 +1,73 @@
+<body ng-app="app" ng-controller="ClienteController as ctrl">
+
+<div class="col-sm-12">
+  <input type="number" name="id" ng-model="ctrl.pessoa.id" placeholder="ID"/>
+</div>
+<div class="col-sm-12">
+  <input type="text" name="nome" ng-model="ctrl.pessoa.nome" placeholder="Nome"/>
+</div>
+<div class="col-sm-12">
+  <input type="text" name="sobrenome" ng-model="ctrl.pessoa.sobrenome" placeholder="Sobrenome"/>
+</div>
+<div class="col-sm-12">
+  <input type="number" name="idade" ng-model="ctrl.pessoa.idade" placeholder="Idade"/>
+</div>
+<div class="col-sm-12">
+  <input type="text" name="telefone" ng-model="ctrl.pessoa.telefone" placeholder="Telefone"/>
+  <input class="btn btn-primary" type="button" value = "+" ng-click="ctrl.cadastrarTelefone()">
+</div>
+<div class="col-sm-12">
+  <input type="text" name="email" ng-model="ctrl.pessoa.email" placeholder="Email"/>
+  <input class="btn btn-primary" type="button" value = "+" ng-click="ctrl.cadastrarEmail()">
+</div>
+<p></p>
+<p></p>
+<div ng-repeat="email in ctrl.pessoa.emails" class="col-sm-12">
+    Email = {{email}}
+    <input class="btn btn-primary" type="button" value="x" ng-click="ctrl.removerEmail(email)">
+</div>
+
+<div ng-repeat="telefone in ctrl.pessoa.telefones" class="col-sm-12">
+    Telefone = {{telefone}}
+    <input class="btn btn-primary" type="button" value="x" ng-click="ctrl.removerTelefone(telefone)">
+</div>
+
+<div ng-repeat="pessoa in ctrl.pessoas" class="col-sm-12">
+
+<div class="col-sm-12">
+  ID: {{pessoa.id}}
+ </div>
+
+  Nome: {{pessoa.nome}} 
+
+ <div class="col-sm-12">
+  Sobrenome: {{pessoa.sobrenome}}
+ </div>
+
+ <div class="col-sm-12">
+  Idade: {{pessoa.idade}}
+ </div>
+
+ <div ng-repeat="email in pessoa.emails" class="col-sm-12">
+  Email: {{email}}
+ </div>
+
+ <div ng-repeat="telefone in pessoa.telefones" class="col-sm-12">
+  Telefone: {{telefone}}
+  </div>
+ <p></p>
+    <div class="col-sm-12">
+        <input type="button" class="btn btn-primary" value="X" ng-click="ctrl.removerPessoa(pessoa)">
+    </div>
+</div>
+<div class="col-sm-12">
+<input class="btn btn-primary" type="button" value = "Cadastrar Pessoa" ng-click="ctrl.cadastrar()" class="col-sm-12">
+</div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script src="../angularjs-unoesc/js/controllers/global.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers/ClienteController.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
